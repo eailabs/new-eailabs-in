@@ -1,235 +1,937 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>We take Communication Seriously</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Courier+Prime&display=swap"
-        rel="stylesheet">
+    <title>Communication & Visibility – Exponent AI Labs</title>
     <meta name="description"
-        content="Technical skills aren't enough. We focus on communication, soft skills, and interview preparation to ensure you stand out in the tech industry. Classes in Kota and Jaipur.">
+        content="Technical skills aren't enough. We focus on communication, soft skills, and profile building to ensure you stand out in the tech industry. Classes in Kota and Jaipur.">
     <meta name="keywords"
-        content="communication skills for developers, soft skills training Kota, interview preparation, tech interview coaching, English for engineers, professional grooming Jaipur">
+        content="communication skills for developers, soft skills training Kota, interview preparation, tech interview coaching, LinkedIn GitHub for engineers">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Course",
       "name": "Communication and Soft Skills",
       "description": "A focused module on enhancing communication skills for technical professionals.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Exponent AI Labs",
-        "sameAs": "https://www.eailabs.in"
-      },
+      "provider": { "@type": "EducationalOrganization", "name": "Exponent AI Labs", "sameAs": "https://www.eailabs.in" },
       "areaServed": ["Kota", "Jaipur"]
     }
     </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="../1376a406-e0dd-43fb-afed-91782c3417e9.jpg">
+
     <style>
+        :root {
+            --bg-primary: #07070D;
+            --bg-card: #0F0F1A;
+            --bg-elevated: #161625;
+            --accent: #7C6FFF;
+            --accent-2: #FF6B6B;
+            --accent-glow: rgba(124, 111, 255, 0.18);
+            --text-primary: #EEEEFF;
+            --text-muted: #7777AA;
+            --text-dim: #44445A;
+            --border: rgba(255, 255, 255, 0.07);
+            --border-accent: rgba(124, 111, 255, 0.35);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: #F9F9F7;
-            color: #1a1a1a;
-            font-family: 'Times New Roman', Times, serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .font-headline {
-            font-family: 'Playfair Display', serif;
+        ::-webkit-scrollbar {
+            width: 6px;
         }
 
-        .font-typewriter {
-            font-family: 'Courier Prime', monospace;
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
         }
 
-        .page-enter {
-            animation: unfoldIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-            transform-origin: top center;
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 3px;
         }
 
-        @keyframes unfoldIn {
-            0% {
-                transform: perspective(2000px) rotateX(100deg);
-                opacity: 0;
-                box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 clamp(1.5rem, 5vw, 4rem);
+            height: 68px;
+            background: rgba(7, 7, 13, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 36px;
+            width: 36px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-accent);
+        }
+
+        .nav-logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo-text span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1.25rem;
+            background: var(--accent);
+            color: #fff !important;
+            border-radius: 8px;
+            font-size: 0.875rem !important;
+            font-weight: 600 !important;
+            text-decoration: none;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.15s !important;
+        }
+
+        .nav-cta:hover {
+            background: #9488FF !important;
+            box-shadow: 0 0 24px var(--accent-glow);
+            transform: translateY(-1px);
+        }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .nav-hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+        }
+
+        .page-hero {
+            position: relative;
+            padding: 140px clamp(1.5rem, 6vw, 6rem) 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(124, 111, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(124, 111, 255, 0.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 30%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 30%, transparent 100%);
+        }
+
+        .page-hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(124, 111, 255, 0.18) 0%, transparent 70%);
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb:hover {
+            color: var(--accent);
+        }
+
+        .page-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 1.25rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #7C6FFF 0%, #FF6B6B 60%, #FFB347 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-hero p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-muted);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 80px clamp(1.5rem, 6vw, 6rem);
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .section-sub {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 540px;
+            line-height: 1.7;
+        }
+
+        /* PROFILE CARDS */
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .profile-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 0% 0%, var(--accent-glow) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .profile-card:hover {
+            border-color: var(--border-accent);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-card:hover::before {
+            opacity: 1;
+        }
+
+        .profile-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            opacity: 0.3;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .profile-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .profile-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .profile-tag {
+            display: inline-flex;
+            margin-top: 1rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(124, 111, 255, 0.1);
+            border: 1px solid rgba(124, 111, 255, 0.2);
+            border-radius: 100px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--accent);
+        }
+
+        /* CALLOUT */
+        .callout {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 16px 16px 0;
+            padding: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .callout p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .callout-action {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .callout-action span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .callout-action a {
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .callout-action a:hover {
+            opacity: 0.75;
+        }
+
+        /* VISIBILITY ROW */
+        .visibility-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 80px clamp(1.5rem, 6vw, 6rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .visibility-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .visibility-text {}
+
+        .visibility-quote {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--text-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .visibility-quote em {
+            font-style: italic;
+            background: linear-gradient(135deg, #7C6FFF, #FF6B6B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .visibility-body {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .visibility-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.25rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .step-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 32px;
+        }
+
+        .step-text h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .step-text p {
+            font-size: 0.825rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .cta-banner {
+            margin: 80px clamp(1.5rem, 6vw, 6rem);
+            padding: 3rem 2.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-accent);
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(124, 111, 255, 0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-banner-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .cta-banner-sub {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .cta-banner-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 2rem;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #9488FF;
+            box-shadow: 0 0 32px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 2rem;
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--border-accent);
+            background: rgba(124, 111, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 60px clamp(1.5rem, 6vw, 6rem) 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .footer-brand-name img {
+            height: 30px;
+            width: 30px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .footer-brand-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 300px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            transition: all 0.2s;
+        }
+
+        .footer-social a:hover {
+            border-color: var(--border-accent);
+            color: var(--accent);
+            background: rgba(124, 111, 255, 0.08);
+        }
+
+        .footer-col-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-copy {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 200;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-fab:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
             }
 
-            100% {
-                transform: perspective(2000px) rotateX(0deg);
-                opacity: 1;
-                box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            .nav-hamburger {
+                display: flex;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .visibility-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .profiles-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
-    <link rel="icon" type="image/jpeg" href="../1376a406-e0dd-43fb-afed-91782c3417e9.jpg">
 </head>
 
-<body class="min-h-screen bg-[#F9F9F7] text-[#1a1a1a] overflow-x-hidden">
-    <div
-        class="w-full min-h-screen p-4 md:p-8 lg:p-12 relative border-x border-gray-200 shadow-none mx-auto max-w-[1920px] page-enter">
+<body>
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <img src="../1376a406-e0dd-43fb-afed-91782c3417e9.jpg" alt="Exponent AI Labs Logo">
+            <span class="nav-logo-text">Exponent <span>AI</span> Labs</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../courses/index.html">Courses</a></li>
+            <li><a href="../why_python/index.html">Why Python</a></li>
+            <li><a href="../problem_solving/index.html">Problem Solving</a></li>
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="https://wa.me/919414938886?text=I%20want%20to%20discuss%20how%20can%20I%20start%2Fgrow%20in%20career"
+                    class="nav-cta" target="_blank">Talk to Us →</a></li>
+        </ul>
+        <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
 
-        <!-- Header / Masthead -->
-        <header class="text-center mb-8 border-b-4 border-black pb-6">
-            <div
-                class="flex justify-between items-center border-b border-black pb-2 mb-4 font-typewriter text-xs uppercase tracking-widest text-gray-600">
-                <span id="date-line" class="mx-auto"></span>
-            </div>
-
-            <script>
-                const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                document.getElementById('date-line').textContent = new Date().toLocaleDateString('en-US', dateOptions);
-            </script>
-
-            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-4">
-                <img src="../1376a406-e0dd-43fb-afed-91782c3417e9.jpg" alt="Logo"
-                    class="h-20 w-auto md:h-32 object-contain hidden md:block">
-                <h1
-                    class="font-headline text-6xl md:text-8xl font-black uppercase leading-none tracking-tighter text-black">
-                    Exponent AI Labs
-                </h1>
-                <img src="../1376a406-e0dd-43fb-afed-91782c3417e9.jpg" alt="Logo"
-                    class="h-20 w-auto md:h-32 object-contain md:hidden block mt-2">
-            </div>
-
-            <div class="flex justify-center items-center gap-6 border-t-2 border-black pt-3 mt-3">
-                <span class="font-headline font-bold italic text-lg text-gray-800">"Mastering the Skill for
-                    Today and Tomorrow"</span>
-            </div>
-            <p class="mt-2 font-typewriter text-sm font-bold uppercase tracking-wider text-gray-500">
-                Computer Science • Artificial Intelligence • Coaching
+    <div class="page-hero">
+        <div class="page-hero-orb"></div>
+        <div class="page-hero-content">
+            <a href="../index.html" class="breadcrumb">← Home / Communication</a>
+            <h1>Why <span class="gradient-text">Communication</span><br>& Visibility Matter</h1>
+            <p>It's not just what you know — it's who sees it. Level up your profiles and let your work speak at scale.
             </p>
-        </header>
-
-        <a href="../" class="font-typewriter text-xs uppercase hover:underline mb-8 inline-block">← Back to
-            Front Page</a>
-
-        <article class="max-w-4xl mx-auto pb-12">
-            <h1 class="font-headline text-5xl md:text-7xl font-black mb-4 leading-none">Why Communication and Visibility
-                Matter in Tech</h1>
-            <h2 class="font-typewriter text-xl md:text-2xl font-bold mb-8 text-gray-700">Level Up Your Profiles</h2>
-
-            <div class="border-y-2 border-black py-4 mb-8">
-                <p class="font-typewriter text-sm font-bold uppercase tracking-widest text-center">
-                    It's not just what you know — it's who sees it.
-                </p>
-            </div>
-
-            <div class="prose prose-lg font-serif text-justify max-w-none text-[#1a1a1a] mb-12">
-                <p
-                    class="first-letter:text-5xl first-letter:font-headline first-letter:font-bold first-letter:mr-2 first-letter:float-left mb-6">
-                    In today's tech world, it's not just about what you know — it's about how you share it and who sees
-                    it. Keeping your LinkedIn, GitHub, and social profiles updated isn't extra work; it's a smart move
-                    that opens doors. These platforms let you showcase your skills, connect with pros, and stand out in
-                    a crowded job market.
-                </p>
-
-                <div class="my-8 space-y-6">
-                    <div class="flex gap-4 items-start">
-                        <span class="font-headline font-bold text-2xl text-black">01.</span>
-                        <div>
-                            <h3 class="font-headline font-bold text-xl mb-1">LinkedIn</h3>
-                            <p>A polished LinkedIn profile tells your story — projects, experiences, and endorsements —
-                                making recruiters notice you faster.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-4 items-start">
-                        <span class="font-headline font-bold text-2xl text-black">02.</span>
-                        <div>
-                            <h3 class="font-headline font-bold text-xl mb-1">GitHub</h3>
-                            <p>GitHub is your live portfolio, where code speaks louder than words, proving you can build
-                                real stuff.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-4 items-start">
-                        <span class="font-headline font-bold text-2xl text-black">03.</span>
-                        <div>
-                            <h3 class="font-headline font-bold text-xl mb-1">Social Profiles</h3>
-                            <p>Social profiles (like X or Reddit) help you join conversations, share ideas, and network
-                                globally, turning followers into opportunities.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p>
-                    By staying active and visible, you build credibility, attract mentors, and even land gigs through
-                    collaborations. It's all about turning your knowledge into connections that fuel growth.
-                </p>
-            </div>
-
-            <div class="bg-gray-100 p-8 border-l-4 border-black">
-                <p class="font-serif italic mb-4">
-                    In our offline classes in Kota, we guide you on building these profiles right — from GitHub repos
-                    tied to our projects to LinkedIn tips for interviews.
-                </p>
-                <div class="mt-6 flex items-center justify-between border-t border-gray-400 pt-4">
-                    <span class="font-typewriter text-xs font-bold uppercase">Join us to shine online</span>
-                    <a href="https://wa.me/919414938886?text=I%20want%20to%20discuss%20how%20can%20I%20start%2Fgrow%20in%20career"
-                        class="font-headline font-bold hover:underline">Schedule a 15 mint 1:1 to discuss more →</a>
-                </div>
-            </div>
-        </article>
-        <footer class="mt-12 border-t-4 border-black pt-6 pb-8 text-center bg-gray-50">
-            <div
-                class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 font-typewriter text-sm text-gray-700 max-w-5xl mx-auto px-4">
-                <!-- Address Section -->
-                <div class="text-center md:text-left">
-                    <h5 class="font-bold uppercase tracking-widest mb-4 text-black">Find Us</h5>
-                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
-                        <img src="../1376a406-e0dd-43fb-afed-91782c3417e9.jpg" alt="Exponent AI Labs Logo"
-                            class="h-16 w-auto mb-4 md:mb-0">
-                        <a href="https://www.google.com/maps/place/Exponent+AI+Labs/@25.1518652,75.851024,17z/data=!3m1!4b1!4m6!3m5!1s0x396f85a85972eaf9:0x5afa0001bdeb64cc!8m2!3d25.1518652!4d75.851024!16s%2Fg%2F11yzthq71n?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
-                            target="_blank" class="hover:underline flex flex-col items-center md:items-start">
-                            <p class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
-                                    viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                                </svg> Exponent AI Labs</p>
-                            <p class="pl-6">218 - A Talwandi</p>
-                            <p class="pl-6">Kota Rajasthan 324005</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Contact Section -->
-                <div class="text-center">
-                    <h5 class="font-bold uppercase tracking-widest mb-2 text-black">Contact</h5>
-                    <p>Phone: 9414938886</p>
-                    <p>Email: namaste@eailabs.in</p>
-                </div>
-
-                <!-- Social Section -->
-                <div class="text-center md:text-right">
-                    <h5 class="font-bold uppercase tracking-widest mb-2 text-black">Social</h5>
-                    <div class="space-x-2">
-                        <a href="https://x.com/eailabs" target="_blank" class="hover:underline">X (Twitter)</a>
-                        <span>•</span>
-                        <a href="https://www.youtube.com/@eailabs" target="_blank" class="hover:underline">Youtube</a>
-                        <span>•</span>
-                        <a href="#" class="hover:underline">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Copyright Section -->
-            <div class="border-t border-black w-1/2 mx-auto pt-4">
-                <p class="font-typewriter text-xs text-gray-500 uppercase tracking-widest">Exponent AI Labs &copy;
-                    2026
-                    • All Rights Reserved</p>
-            </div>
-        </footer>
+        </div>
     </div>
-    <!-- Floating WhatsApp Icon -->
-    <a href="https://wa.me/919414938886"
-        class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3 rounded-full shadow-lg hover:bg-[#128C7E] transition-colors duration-300 flex items-center justify-center transform hover:scale-110"
-        target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-whatsapp"
-            viewBox="0 0 16 16">
+
+    <!-- INTRO + PLATFORMS -->
+    <section>
+        <div class="section-label">Your Digital Presence</div>
+        <h2 class="section-title">Your Profile is Your Pitch</h2>
+        <p class="section-sub">In today's tech world, keeping your LinkedIn, GitHub, and social presence updated opens
+            doors. These platforms let you showcase skills, connect with pros, and stand out in a crowded market.</p>
+
+        <div class="profiles-grid">
+            <div class="profile-card">
+                <div class="profile-num">01</div>
+                <div class="profile-name">LinkedIn</div>
+                <p class="profile-desc">A polished LinkedIn profile tells your story — projects, experiences, and
+                    endorsements — making recruiters notice you faster. It's your resume that works 24/7.</p>
+                <span class="profile-tag">Career Networking</span>
+            </div>
+            <div class="profile-card">
+                <div class="profile-num">02</div>
+                <div class="profile-name">GitHub</div>
+                <p class="profile-desc">GitHub is your live portfolio, where code speaks louder than words, proving you
+                    can build real stuff. Every commit is a data point about you as an engineer.</p>
+                <span class="profile-tag">Code Portfolio</span>
+            </div>
+            <div class="profile-card">
+                <div class="profile-num">03</div>
+                <div class="profile-name">Social (X / Reddit)</div>
+                <p class="profile-desc">Social profiles help you join conversations, share ideas, and network globally —
+                    turning followers into opportunities. Thought leadership starts with a single post.</p>
+                <span class="profile-tag">Community Building</span>
+            </div>
+        </div>
+
+        <div class="callout" style="max-width: 860px; margin: 3rem auto 0;">
+            <p>"By staying active and visible, you build credibility, attract mentors, and even land gigs through
+                collaborations. It's all about turning your knowledge into connections that fuel growth."</p>
+            <div class="callout-action">
+                <span>Join us to shine online</span>
+                <a href="https://wa.me/919414938886?text=I%20want%20to%20discuss%20how%20can%20I%20start%2Fgrow%20in%20career"
+                    target="_blank">Schedule a 15-min 1:1 to discuss more →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE HELP -->
+    <div class="visibility-section">
+        <div class="visibility-inner">
+            <div class="visibility-text">
+                <div class="section-label">In Our Offline Classes</div>
+                <div class="visibility-quote">We guide you on building these profiles <em>right</em> — from the first
+                    commit to the perfect summary.</div>
+                <p class="visibility-body">In our offline classes in Kota, we make profile building a core part of the
+                    curriculum — GitHub repos tied to real projects, LinkedIn tips tailored for tech interviews, and
+                    strategies to grow your online presence authentically.</p>
+            </div>
+            <div class="visibility-steps">
+                <div class="step-item">
+                    <div class="step-num">01</div>
+                    <div class="step-text">
+                        <h4>Set Up Your GitHub Right</h4>
+                        <p>Learn to write README files, organize repos, and make your contribution history look like a
+                            story worth reading.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">02</div>
+                    <div class="step-text">
+                        <h4>Craft a Recruiter-Ready LinkedIn</h4>
+                        <p>We walk through headlines, summaries, project descriptions, and how to get endorsements that
+                            actually matter.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">03</div>
+                    <div class="step-text">
+                        <h4>Practice Technical Communication</h4>
+                        <p>Explaining your code and ideas clearly is a superpower. We practice this through code reviews
+                            and peer discussions.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">04</div>
+                    <div class="step-text">
+                        <h4>Mock Interviews & Feedback</h4>
+                        <p>Regular mock interviews sharpen your ability to communicate under pressure — a skill that
+                            transfers directly to the real thing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-banner">
+        <h2 class="cta-banner-title">Start Building Your <span class="gradient-text">Presence</span></h2>
+        <p class="cta-banner-sub">Join our offline classes in Kota and learn how to be seen, heard, and hired.</p>
+        <div class="cta-banner-actions">
+            <a href="https://wa.me/919414938886?text=I%20want%20to%20discuss%20how%20can%20I%20start%2Fgrow%20in%20career"
+                class="btn-primary" target="_blank">Schedule a Free Call →</a>
+            <a href="../courses/index.html" class="btn-secondary">View Courses</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand-name"><img src="../1376a406-e0dd-43fb-afed-91782c3417e9.jpg"
+                        alt="Logo">Exponent AI Labs</div>
+                <p class="footer-brand-desc">Mastering the Skill for Today and Tomorrow. Offline AI & programming
+                    classes in Kota and Jaipur.</p>
+                <div class="footer-social">
+                    <a href="https://x.com/eailabs" target="_blank">𝕏</a>
+                    <a href="https://www.youtube.com/@eailabs" target="_blank">▶</a>
+                    <a href="https://www.google.com/maps/place/Exponent+AI+Labs/@25.1518652,75.851024,17z"
+                        target="_blank">📍</a>
+                </div>
+            </div>
+            <div>
+                <div class="footer-col-title">Pages</div>
+                <ul class="footer-links">
+                    <li><a href="../courses/index.html">Courses</a></li>
+                    <li><a href="../why_python/index.html">Why Python</a></li>
+                    <li><a href="../problem_solving/index.html">Problem Solving</a></li>
+                    <li><a href="../open_source/index.html">Open Source</a></li>
+                    <li><a href="../testimonials/index.html">Testimonials</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-col-title">Contact</div>
+                <ul class="footer-links">
+                    <li><a href="tel:+919414938886">+91 94149 38886</a></li>
+                    <li><a href="mailto:namaste@eailabs.in">namaste@eailabs.in</a></li>
+                    <li><a href="https://www.google.com/maps/place/Exponent+AI+Labs/@25.1518652,75.851024,17z"
+                            target="_blank">218-A Talwandi, Kota, RJ 324005</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copy">© 2026 Exponent AI Labs • All Rights Reserved</span>
+            <span class="footer-copy">Built with ❤️ in Kota, Rajasthan</span>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919414938886" class="whatsapp-fab" target="_blank" rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
             <path
                 d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
         </svg>
     </a>
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function () {
+            const links = document.querySelector('.nav-links');
+            links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+            links.style.flexDirection = 'column'; links.style.position = 'absolute';
+            links.style.top = '68px'; links.style.left = '0'; links.style.right = '0';
+            links.style.background = 'rgba(7,7,13,0.98)'; links.style.padding = '1.5rem 2rem';
+            links.style.borderBottom = '1px solid rgba(255,255,255,0.07)';
+        });
+    </script>
 </body>
 
 </html>
